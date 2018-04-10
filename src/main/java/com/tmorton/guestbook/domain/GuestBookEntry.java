@@ -1,13 +1,14 @@
 package com.tmorton.guestbook.domain;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
 
 @Entity
-//@Table(name = "entries")
+@Table(name = "entries")
 public class GuestBookEntry {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     @NotEmpty
     private String user;
