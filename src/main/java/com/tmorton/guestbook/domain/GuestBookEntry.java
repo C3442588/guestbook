@@ -8,7 +8,8 @@ import javax.persistence.*;
 @Table(name = "entries")
 public class GuestBookEntry {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue (strategy = GenerationType.AUTO)
+    @Column (name = "entry_id")
     private Integer id;
     @NotEmpty
     private String user;
