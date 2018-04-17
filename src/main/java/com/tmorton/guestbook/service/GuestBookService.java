@@ -33,4 +33,8 @@ public class GuestBookService {
         this.guestBookEntryRepository.save (newEntry);
     }
 
+    public GuestBookEntry findOne (Integer id) {
+        return this.guestBookEntryRepository.findOne (id);
+    }
+
 }
