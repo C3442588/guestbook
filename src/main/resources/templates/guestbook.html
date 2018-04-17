@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Spring Guestbook</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="column">
+            <h1>Comments Table:</h1>
+        </div>
+        <div class="column">
+            <img th:src="@{/images/logo.png}" />
+        </div>
+
+    </div>
+    <div th:if="${!entries.isEmpty()}">
+        <table>
+            <tr>
+                <th>User</th><th>Comment</th>
+            </tr>
+            <tr th:each="entry: ${entries}">
+                <td th:text="${entry.user}"></td>
+                <td th:text="${entry.comment}"></td>
+            </tr>
+        </table>
+    </div>
+    <div th:if="${entries.isEmpty()}">
+        <p>There are no comments in the Guestbook</p>
+    </div>
+
+</div>
+
+
+</body>
+</html>
